@@ -1,6 +1,7 @@
 # Скрипт для создания базы данных.
 
-from app import db
+from app import db, app
 from app.models import User
 
-db.create_all()
+with app.app_context():
+    db.create_all()
