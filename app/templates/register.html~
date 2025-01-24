@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}
-Вход
+регистрация
 {% endblock %}
 
 {% block content %}
-<h1>Вход</h1>
-<form method="post" action="{{ url_for('login') }}">
+<h1>Регистрация</h1>
+<form method="post" action="{{ url_for('register') }}">
         {{ form.hidden_tag() }}
+        <div>
+            {{ form.username.label }}
+            {{ form.username(size=32) }}
+        </div>
         <div>
             {{ form.email.label }}
             {{ form.email(size=32) }}
@@ -17,8 +21,8 @@
             {{ form.password(size=32) }}
         </div>
         <div>
-            {{ form.remember() }}
-            {{ form.remember.label }}
+            {{ form.confirm_password.label }}
+            {{ form.confirm_password(size=32) }}
         </div>
         <div>
             {{ form.submit() }}

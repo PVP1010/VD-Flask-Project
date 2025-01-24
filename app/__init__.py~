@@ -1,9 +1,9 @@
 # основной файл для инициализации пакета
 
 from flask import Flask                                    # импорт класса Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
-from flask_login import LoginManager
+from flask_sqlalchemy import SQLAlchemy                    # импорт класса SQLAlchemy
+from flask_bcrypt import Bcrypt                            # импорт класса Bcrypt
+from flask_login import LoginManager                       # импорт класса LoginManager
 
 
 app = Flask(__name__)                                       # объект класса Flask
