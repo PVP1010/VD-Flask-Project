@@ -1,3 +1,5 @@
+# Здесь мы инициализируем наше приложение Flask и подключаем все необходимые расширения.
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -11,5 +13,6 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
+login_manager.login_message = 'Пожалуйста, войдите, чтобы получить доступ к этой странице.'
 
 from app import routes

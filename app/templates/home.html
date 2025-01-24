@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Главная{% endblock %}
 
 {% block content %}
-    <h1>Welcome to the Home Page</h1>
+<div class="jumbotron text-center">
+    <h1 class="display-4">Добро пожаловать!</h1>
+    <p class="lead">Это главная страница нашего приложения. Здесь вы можете зарегистрироваться, войти в систему или редактировать свой профиль.</p>
+    {% if not current_user.is_authenticated %}
+        <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg">Регистрация</a>
+        <a href="{{ url_for('login') }}" class="btn btn-success btn-lg">Вход</a>
+    {% endif %}
+</div>
 {% endblock %}
